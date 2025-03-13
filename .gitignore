@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+venv/
+.env
+
+services/firebase_credentials.json
+
+Thumbs.db  # Windows
