@@ -61,3 +61,37 @@ FIREBASE_APP_ID=SEU_APP_ID
    python app.py
    ```
 
+## 🎮 **Funcionalidades**
+✅ **Login e Cadastro de Usuários via Firebase**  
+✅ **Gerenciamento de Livros (CRUD)**:  
+
+- 📌 **Adicionar livros**  
+- 📄 **Listar livros cadastrados**  
+- ✏ **Atualizar informações de um livro**  
+- ❌ **Remover livros do banco de dados**  
+✅ **Logout do sistema**
+
+---
+
+## 🏗 **Estrutura do Código**
+📂 **biblioteca-sd/**  
+├── 📂 `ui/` → Interfaces gráficas com PyQt  
+│   ├── `login.py` → Tela de login  
+│   ├── `register.py` → Tela de cadastro  
+│   ├── `main.py` → Tela principal (CRUD)  
+│   ├── `styles.py` → Arquivo de estilização  
+├── 📂 `services/` → Lógica do sistema  
+│   ├── `auth.py` → Gerenciamento de login/cadastro  
+│   ├── `crud.py` → Operações no Firebase (CRUD)  
+│   ├── `firebase_config.py` → Conexão com o Firebase  
+│   ├── `firebase_credentials.json` → Arquivo de credenciais do Firebase (**NÃO COMMITAR!**)  
+├── `app.py` → Arquivo principal que inicia o sistema  
+├── `.gitignore` → Arquivos que não devem ser commitados  
+├── `requirements.txt` → Lista de pacotes necessários  
+├── `README.md` → Documentação do projeto  
+
+---
+
+## 👨‍💻👩‍💻 **Autores**
+**Davi Rodolfo e Melissa Alves**
+  
