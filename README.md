@@ -15,20 +15,20 @@ Certifique-se de ter instalado:
 
 ### 📌 **Passos para instalação**
 
-1️⃣ **Clone o repositório**
+### 1️⃣ **Clone o repositório**
 ```bash
 git clone https://github.com/melissaoalves/biblioteca-sd.git
 cd biblioteca-sd
 ```
 
-2️⃣ **Crie um ambiente virtual** 
+### 2️⃣ **Crie um ambiente virtual** 
 ```bash
 python -m venv venv
 source venv/bin/activate  # Linux/macOS
 venv\Scripts\activate      # Windows
 ```
 
-3️⃣ **Instale as dependências**
+### 3️⃣ **Instale as dependências**
 ```bash
 pip install -r requirements.txt
 ```
@@ -66,7 +66,6 @@ FIREBASE_APP_ID=SEU_APP_ID
 ## 🎮 **Funcionalidades**
 ✅ **Login e Cadastro de Usuários via Firebase**  
 ✅ **Gerenciamento de Livros (CRUD)**:  
-
 - 📌 **Adicionar livros**  
 - 📄 **Listar livros cadastrados**  
 - ✏ **Atualizar informações de um livro**  
@@ -90,11 +89,11 @@ FIREBASE_APP_ID=SEU_APP_ID
 │   ├── `auth.py` → Gerenciamento de login/cadastro  
 │   ├── `crud.py` → Operações no Firebase (CRUD)  
 │   ├── `firebase_config.py` → Conexão com o Firebase  
-│   ├── `firebase_credentials.json` → Arquivo de credenciais gerado pelo Firebase **(Adicionar ao `.gitignore`)**  
-├── `app.py` → Arquivo principal que inicia o sistema  
-├── `.env` → Arquivo de variáveis de ambiente **(Adicionar ao `.gitignore`)** 
-├── `.gitignore` → Lista de arquivos e pastas ignorados pelo Git  
-├── `requirements.txt` → Lista de pacotes necessários  
+│   ├── `firebase_credentials.json` → Arquivo de credenciais gerado pelo Firebase **(Adicionar ao `.gitignore`)**                    
+├── `app.py` → Arquivo principal que inicia o sistema                                              
+├── `.env` → Arquivo de variáveis de ambiente **(Adicionar ao `.gitignore`)**  
+├── `.gitignore` → Lista de arquivos e pastas ignorados pelo Git    
+├── `requirements.txt` → Lista de pacotes necessários    
 ├── `README.md` → Documentação do projeto  
 
 ---
