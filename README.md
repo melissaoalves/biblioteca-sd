@@ -58,9 +58,7 @@ FIREBASE_MESSAGING_SENDER_ID=SEU_MESSAGING_SENDER_ID
 FIREBASE_APP_ID=SEU_APP_ID
 ```
 
----
-
-5️⃣ **Execute o sistema**
+### 5️⃣ **Execute o sistema**
    ```bash
    python app.py
    ```
@@ -101,6 +99,6 @@ FIREBASE_APP_ID=SEU_APP_ID
 
 ---
 
-## 👨‍💻👩‍💻 **Autores**
+## 👨‍💻 **Autores**
 **Davi Rodolfo e Melissa Alves**
   
