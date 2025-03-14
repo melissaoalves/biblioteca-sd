@@ -17,7 +17,6 @@ firebase = pyrebase.initialize_app(firebase_config)
 auth = firebase.auth()
 
 def login_usuario(email, senha):
-    """Realiza login do usuário."""
     try:
         user = auth.sign_in_with_email_and_password(email, senha)
         return True, "Login realizado com sucesso!"
@@ -25,7 +24,6 @@ def login_usuario(email, senha):
         return False, "Erro no login: Verifique seu e-mail e senha."
 
 def registrar_usuario(email, senha):
-    """Registra um novo usuário no Firebase."""
     try:
         auth.create_user_with_email_and_password(email, senha)
         return True, "Usuário registrado com sucesso!"
