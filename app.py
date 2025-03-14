@@ -2,18 +2,15 @@ import sys
 import os
 from PyQt6.QtWidgets import QApplication
 from ui.login import LoginWindow
-from ui.register import RegisterWindow
-
-sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+from ui.main import MainWindow
 
 def main():
     app = QApplication(sys.argv)
 
     login_window = LoginWindow()
-    register_window = RegisterWindow()
+    main_window = MainWindow()
 
-    login_window.show_register_signal.connect(register_window.show)
-    register_window.show_login_signal.connect(login_window.show)
+    login_window.login_successful_signal.connect(main_window.show)
 
     login_window.show()
     sys.exit(app.exec())
