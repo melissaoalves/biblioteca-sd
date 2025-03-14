@@ -11,6 +11,8 @@ Certifique-se de ter instalado:
 - ✅ **Python 3.8+**
 - ✅ **Pip** (gerenciador de pacotes do Python)
 
+---
+
 ### 📌 **Passos para instalação**
 
 1️⃣ **Clone o repositório**
@@ -56,6 +58,8 @@ FIREBASE_MESSAGING_SENDER_ID=SEU_MESSAGING_SENDER_ID
 FIREBASE_APP_ID=SEU_APP_ID
 ```
 
+---
+
 5️⃣ **Execute o sistema**
    ```bash
    python app.py
@@ -75,6 +79,10 @@ FIREBASE_APP_ID=SEU_APP_ID
 
 ## 🏗 **Estrutura do Código**
 📂 **biblioteca-sd/**  
+├── 📂 `prints/` → Capturas de tela da interface para o README  
+│   ├── `login.png` → Print da tela de login  
+│   ├── `register.png` → Print da tela de cadastro  
+│   ├── `main.png` → Print da tela principal (CRUD)  
 ├── 📂 `ui/` → Interfaces gráficas com PyQt  
 │   ├── `login.py` → Tela de login  
 │   ├── `register.py` → Tela de cadastro  
@@ -84,9 +92,10 @@ FIREBASE_APP_ID=SEU_APP_ID
 │   ├── `auth.py` → Gerenciamento de login/cadastro  
 │   ├── `crud.py` → Operações no Firebase (CRUD)  
 │   ├── `firebase_config.py` → Conexão com o Firebase  
-│   ├── `firebase_credentials.json` → Arquivo de credenciais do Firebase (**NÃO COMMITAR!**)  
+│   ├── `firebase_credentials.json` → Arquivo de credenciais gerado pelo Firebase **(Adicionar ao `.gitignore`)**  
 ├── `app.py` → Arquivo principal que inicia o sistema  
-├── `.gitignore` → Arquivos que não devem ser commitados  
+├── `.env` → Arquivo de variáveis de ambiente **(Adicionar ao `.gitignore`)** 
+├── `.gitignore` → Lista de arquivos e pastas ignorados pelo Git  
 ├── `requirements.txt` → Lista de pacotes necessários  
 ├── `README.md` → Documentação do projeto  
 
