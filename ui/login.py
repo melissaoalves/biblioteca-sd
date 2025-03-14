@@ -3,7 +3,7 @@ from PyQt6.QtCore import pyqtSignal
 from services.auth import login_usuario
 
 class LoginWindow(QWidget):
-    show_register_signal = pyqtSignal() 
+    login_successful_signal = pyqtSignal()  # Criando o sinal para quando o login for bem-sucedido
 
     def __init__(self):
         super().__init__()
@@ -31,12 +31,12 @@ class LoginWindow(QWidget):
         layout.addWidget(self.btn_login)
 
         self.btn_registrar = QPushButton("Registrar", self)
-        self.btn_registrar.clicked.connect(self.mostrar_registro) 
         layout.addWidget(self.btn_registrar)
 
         self.setLayout(layout)
 
     def fazer_login(self):
+        """Verifica se o login é válido e emite o sinal de sucesso."""
         email = self.email_input.text()
         senha = self.senha_input.text()
 
@@ -47,10 +47,7 @@ class LoginWindow(QWidget):
         sucesso, mensagem = login_usuario(email, senha)
         if sucesso:
             QMessageBox.information(self, "Sucesso", "Login realizado com sucesso!")
-            self.close()  
+            self.login_successful_signal.emit()  # Emite o sinal quando o login for bem-sucedido
+            self.close()  # Fecha a tela de login
         else:
             QMessageBox.warning(self, "Erro", mensagem)
-
-    def mostrar_registro(self):
-        self.show_register_signal.emit() 
-        self.close()
