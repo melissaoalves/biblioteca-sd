@@ -1,6 +1,7 @@
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QMessageBox
 from PyQt6.QtCore import pyqtSignal
 from services.auth import registrar_usuario
+from ui.styles import get_styles
 
 class RegisterWindow(QWidget):
     show_login_signal = pyqtSignal()
@@ -12,8 +13,13 @@ class RegisterWindow(QWidget):
     def initUI(self):
         self.setWindowTitle("Cadastro")
         self.setGeometry(100, 100, 400, 300)
+        self.setStyleSheet(get_styles())
 
         layout = QVBoxLayout()
+
+        titulo_label = QLabel("Criar Conta")
+        titulo_label.setStyleSheet("font-size: 18px; font-weight: bold; text-align: center;")
+        layout.addWidget(titulo_label)
 
         self.email_input = QLineEdit(self)
         self.email_input.setPlaceholderText("Email")
@@ -53,5 +59,5 @@ class RegisterWindow(QWidget):
             QMessageBox.warning(self, "Erro", mensagem)
 
     def mostrar_login(self):
-        self.close()  
-        self.show_login_signal.emit() 
+        self.close()
+        self.show_login_signal.emit()

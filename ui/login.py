@@ -1,9 +1,11 @@
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QMessageBox
 from PyQt6.QtCore import pyqtSignal
 from services.auth import login_usuario
+from ui.styles import get_styles
 
 class LoginWindow(QWidget):
-    login_successful_signal = pyqtSignal()  # Criando o sinal para quando o login for bem-sucedido
+    login_successful_signal = pyqtSignal() 
+    show_register_signal = pyqtSignal()
 
     def __init__(self):
         super().__init__()
@@ -12,8 +14,13 @@ class LoginWindow(QWidget):
     def initUI(self):
         self.setWindowTitle("Login")
         self.setGeometry(100, 100, 400, 300)
+        self.setStyleSheet(get_styles())
 
         layout = QVBoxLayout()
+
+        titulo_label = QLabel("Faça seu Login")
+        titulo_label.setStyleSheet("font-size: 18px; font-weight: bold; text-align: center;")
+        layout.addWidget(titulo_label)
 
         self.email_input = QLineEdit(self)
         self.email_input.setPlaceholderText("Email")
@@ -31,12 +38,12 @@ class LoginWindow(QWidget):
         layout.addWidget(self.btn_login)
 
         self.btn_registrar = QPushButton("Registrar", self)
+        self.btn_registrar.clicked.connect(self.mostrar_registro)
         layout.addWidget(self.btn_registrar)
 
         self.setLayout(layout)
 
     def fazer_login(self):
-        """Verifica se o login é válido e emite o sinal de sucesso."""
         email = self.email_input.text()
         senha = self.senha_input.text()
 
@@ -47,7 +54,10 @@ class LoginWindow(QWidget):
         sucesso, mensagem = login_usuario(email, senha)
         if sucesso:
             QMessageBox.information(self, "Sucesso", "Login realizado com sucesso!")
-            self.login_successful_signal.emit()  # Emite o sinal quando o login for bem-sucedido
-            self.close()  # Fecha a tela de login
+            self.login_successful_signal.emit()
+            self.close()
         else:
             QMessageBox.warning(self, "Erro", mensagem)
+
+    def mostrar_registro(self):
+        self.show_register_signal.emit()
