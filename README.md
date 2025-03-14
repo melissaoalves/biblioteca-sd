@@ -74,6 +74,18 @@ FIREBASE_APP_ID=SEU_APP_ID
 
 ---
 
+## 📸 **Prints da Interface**
+### 🔹 **Tela de Login**
+![Login](prints/login.png)
+
+### 🔹 **Tela de Cadastro**
+![Cadastro](prints/register.png)
+
+### 🔹 **Tela Principal (Gerenciamento de Livros)**
+![Tela Principal](prints/main.png)
+
+---
+
 ## 🏗 **Estrutura do Código**
 📂 **biblioteca-sd/**  
 ├── 📂 `prints/` → Capturas de tela da interface para o README  
